@@ -1,0 +1,6 @@
+models\User.class
+pageobjects\HomePage.class
+pageobjects\RecoverPasswordPage.class
+pageobjects\RegistrationPage.class
+pageobjects\PersonalAccountPage.class
+pageobjects\AuthorizationPage.class
