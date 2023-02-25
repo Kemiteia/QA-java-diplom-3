@@ -1,7 +1,6 @@
 import io.qameta.allure.junit4.DisplayName;
 import models.User;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
 
 public class LogOutPersonalAccountTest extends WebDriverSettings {
 
@@ -19,6 +18,6 @@ public class LogOutPersonalAccountTest extends WebDriverSettings {
         homePage.clickPersonalAccountButton();
         personalAccountPage.clickLogOutPersonalAccountButton();
         authorizationPage.waitAuthorizationPageToLoad();
-        assertEquals(authorizationPage.getAuthorizationURL(), driver.getCurrentUrl());
+        authorizationPage.checkExitPersonalAccount();
     }
 }

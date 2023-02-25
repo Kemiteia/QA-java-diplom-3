@@ -16,14 +16,11 @@ public class AuthorizationPage extends HomePage {
     private final By registrationButton =  By.xpath(".//a[(@class='Auth_link__1fOlj') and (@href='/register')]");
     private final By recoverPasswordButton =  By.xpath(".//a[(@class='Auth_link__1fOlj') and (@href='/forgot-password')]");
     private final By personalAccountButton = By.xpath(".//a[(@class='AppHeader_header__link__3D_hX') and (@href='/account')]");
+    private final By enterText = By.xpath(".//*[@id=\"root\"]/div/main/div/h2");
 
     public AuthorizationPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
-    }
-
-    public String getAuthorizationURL() {
-        return "https://stellarburgers.nomoreparties.site/login";
     }
 
     public void wait(By element) {
@@ -68,5 +65,10 @@ public class AuthorizationPage extends HomePage {
         putEmailField(user.getEmail());
         putPasswordField(user.getPassword());
         clickLoginButton();
+    }
+
+    public boolean checkExitPersonalAccount() {
+        String text = driver.findElement(enterText).getText();
+        return (text.equals("Вход"));
     }
 }
